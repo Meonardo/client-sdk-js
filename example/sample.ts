@@ -47,8 +47,8 @@ let currentRoom: Room | undefined;
 let startTime: number;
 
 const searchParams = new URLSearchParams(window.location.search);
-const storedUrl = searchParams.get('url') ?? 'ws://localhost:7880';
-const storedToken = searchParams.get('token') ?? '';
+const storedUrl = searchParams.get('url') ?? 'ws://192.168.99.64:7880';
+const storedToken = searchParams.get('token') ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1NzU3MzAsImlzcyI6ImRldmtleSIsIm5hbWUiOiJCYW96YWkiLCJuYmYiOjE2OTE1NzU3MzAsInN1YiI6IkJhb3phaSIsInZpZGVvIjp7InJvb20iOiIxMjM0NTYiLCJyb29tSm9pbiI6dHJ1ZX19.rwpCZ5AKWxy0XTtHHsrhmbTPlnIaIam6ku0xXbdLikQ';
 (<HTMLInputElement>$('url')).value = storedUrl;
 (<HTMLInputElement>$('token')).value = storedToken;
 let storedKey = searchParams.get('key');
@@ -87,7 +87,7 @@ const appActions = {
       publishDefaults: {
         simulcast,
         videoSimulcastLayers: [VideoPresets.h90, VideoPresets.h216],
-        videoCodec: preferredCodec || 'vp8',
+        videoCodec: preferredCodec || 'h264',
         dtx: true,
         red: true,
         forceStereo: false,

@@ -602,6 +602,16 @@ export default class RTCEngine extends (EventEmitter as new () => TypedEventEmit
     // handle buffer amount low events
     this.lossyDC.onbufferedamountlow = this.handleBufferedAmountLow;
     this.reliableDC.onbufferedamountlow = this.handleBufferedAmountLow;
+
+    // pre-negotiate data channel, make it's m-section to be in the first postion
+    // a=group:BUNDLE 0 1 2
+    // m=application
+    // a=mid:0
+    // m=audio
+    // a=mid:1
+    // m=video
+    // a=mid:2
+    this.negotiate();
   }
 
   private handleDataChannel = async ({ channel }: RTCDataChannelEvent) => {
