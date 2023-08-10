@@ -1,6 +1,6 @@
 {
   "name": "amdox-livekit-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript/TypeScript client SDK for LiveKit",
   "main": "./dist/amdox-livekit-client.umd.js",
   "unpkg": "./dist/amdox-livekit-client.umd.js",
